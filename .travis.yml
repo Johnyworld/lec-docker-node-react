@@ -19,3 +19,15 @@ after_success:
   - docker push johnyworld/docker-frontend
   - docker push johnyworld/docker-backend
   - docker push johnyworld/docker-nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: ap-northeast-2
+  app: docker-node-react
+  env: Dockernodereact-env
+  bucket_name: elasticbeanstalk-ap-northeast-2-683369338492
+  bucket_path: docker-node-react
+  on:
+    branch: master 
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key_id: $AWS_SECRET_ACCESS_KEY
