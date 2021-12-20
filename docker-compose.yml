@@ -26,6 +26,12 @@ services:
     volumes:
       - /app/node_modules
       - ./backend:/app
+    environment:
+      MYSQL_HOST: tumssum.clfl1wbvt9g7.ap-northeast-2.rds.amazonaws.com
+      MYSQL_USER: admin
+      MYSQL_ROOT_PASSWORD: aktmxm51
+      MYSQL_DATABASE: myapp
+      MYSQL_PORT: 3306
 
 
   # mysql:
